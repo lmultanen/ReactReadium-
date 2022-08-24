@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 //import { selectStories } from "../features/stories/storiesSlice";
 
 const StoriesList = () => {
-  const stories = useSelector((state) => state);
+  const stories = useSelector((state) => state.stories);
   console.log(stories);
   return (
     <div id="stories" className="column">
