@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link, Routes, Route, Outlet } from "react-router-dom";
 import { useDispatch,useSelector } from "react-redux";
 import { fetchSingleAuthor } from "../features/stories/singleAuthorSlice";
 import CommentsList from "./CommentsList";
@@ -24,11 +24,20 @@ const SingleAuthor = () => {
                 <img src={author.info.imageUrl}/>
             </div>
             <hr/>
-            <div>
-                <h4>STORIES</h4>
+            <div id='single-author-nav'>
+                <nav>
+                    <Link to='stories'>Stories</Link>
+                    <Link to='comments'>Comments</Link>
+                </nav>
+                
+                {/* <h4>STORIES</h4>
                 <AllStories author={true}/>
                 <h4>COMMENTS</h4>
-                <CommentsList author={true}/>
+                <CommentsList author={true}/> */}
+            </div>
+            <hr/>
+            <div>
+                <Outlet/>
             </div>
         </div>
     )
